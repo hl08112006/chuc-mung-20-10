@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Công Chúa Trần Thị Huệ ❤️ Chúc Mừng 20/10</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lovePink: '#ff758c',
+                        lovePurple: '#ff7eb3',
+                        softPink: '#fff0f3',
+                        roseRed: '#d63384'
+                    },
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                        cursive: ['Dancing Script', 'cursive'],
+                        romantic: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Keyframe Animations */
+        @keyframes floatHeart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(255, 117, 140, 0.4); transform: scale(1); }
+            100% { box-shadow: 0 0 35px rgba(214, 51, 132, 0.8); transform: scale(1.05); }
+        }
+
+        @keyframes bounceGift {
+            0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+            50% { transform: translateY(-15px) scale(1.08) rotate(-3deg); }
+        }
+
+        @keyframes spinDisc {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gift-bounce {
+            animation: bounceGift 1.8s infinite ease-in-out;
+        }
+
+        .disc-spin {
+            animation: spinDisc 3s linear infinite;
+        }
+
+        .disc-paused {
+            animation-play-state: paused;
+        }
+
+        .polaroid-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Glassmorphism gradient background */
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased relative overflow-x-hidden">
+
+    <!-- Interactive Heart Canvas background -->
+    <canvas id="heartCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Floating Audio Control Disk -->
+    <div id="musicBtn" class="fixed top-4 right-4 z-50 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-full shadow-lg border border-pink-200 cursor-pointer hover:bg-white transition-all transform hover:scale-105">
+        <div id="musicDisc" class="w-8 h-8 rounded-full bg-gray-900 border-2 border-pink-400 flex items-center justify-center text-white disc-spin disc-paused">
+            <i class="fas fa-music text-xs"></i>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-xs font-bold text-roseRed">Từng Ngày Yêu Em</span>
+            <span class="text-[10px] text-gray-500">buitruonglinh</span>
+        </div>
+    </div>
+
+    <!-- Background Music Audio Tag -->
+    <audio id="bgMusic" loop src="https://files.catbox.moe/k376s0.mp3" preload="auto"></audio>
+
+    <!-- Overlay Gift Screen -->
+    <div id="giftOverlay" class="fixed inset-0 z-50 bg-gradient-to-br from-pink-100 via-rose-200 to-purple-200 flex flex-col items-center justify-center p-4 text-center transition-all duration-700 ease-in-out">
+        
+        <!-- Avatar Wrapper -->
+        <div class="relative mb-6">
+            <div class="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl transition-all duration-300" style="animation: pulseGlow 2s infinite alternate;">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Trần Thị Huệ" class="w-full h-full object-cover">
+            </div>
+            <span class="absolute -bottom-2 -right-2 bg-roseRed text-white text-xs px-3 py-1 rounded-full font-bold shadow-md">Huệ Baby 💖</span>
+        </div>
+
+        <h1 class="font-cursive text-4xl md:text-5xl text-roseRed font-bold mb-2">Gửi Trần Thị Huệ ❤️</h1>
+        <p class="text-gray-600 max-w-md text-sm md:text-base mb-6 px-4">
+            Một bất ngờ nho nhỏ tràn ngập yêu thương dành tặng người con gái tuyệt vời nhất của anh nhân ngày 20/10!
+        </p>
+
+        <!-- Gift Box Graphic -->
+        <div id="giftBox" class="gift-bounce cursor-pointer text-7xl md:text-8xl my-2 transform hover:scale-110 transition-transform">
+            🎁
+        </div>
+
+        <button id="openBtn" class="mt-6 px-8 py-3.5 bg-gradient-to-r from-roseRed to-lovePink text-white font-bold rounded-full shadow-lg hover:shadow-pink-500/50 hover:opacity-95 transition-all transform hover:-translate-y-1 active:translate-y-0 text-base md:text-lg flex items-center gap-2">
+            <i class="fas fa-heart text-amber-200"></i> Bấm Vào Đây Để Mở Quà 20/10 ✨
+        </button>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 max-w-4xl mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Header Title Section -->
+        <header class="text-center mb-10">
+            <span class="inline-block px-4 py-1.5 bg-pink-100 text-roseRed rounded-full font-bold text-xs md:text-sm mb-3 shadow-sm border border-pink-200">
+                ✨ Ngày Phụ Nữ Việt Nam 20/10 ✨
+            </span>
+            <h1 class="font-romantic text-5xl md:text-7xl text-roseRed drop-shadow-md mb-2">Happy Women's Day</h1>
+            <p class="font-cursive text-2xl md:text-3xl text-gray-700">Gửi cô công chúa nhỏ: <span class="text-roseRed font-bold">Trần Thị Huệ</span> 💕</p>
+        </header>
+
+        <!-- Main Card Section -->
+        <section class="glass-card rounded-3xl p-6 md:p-10 shadow-xl mb-10 border border-white/80">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="font-cursive text-3xl md:text-4xl text-roseRed mb-4">Gửi Huệ Xinh Của Anh ✨</h2>
+                
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
+                    Chúc em yêu có một ngày 20/10 thật nhiều niềm vui, luôn luôn xinh đẹp, rạng rỡ và tràn ngập hạnh phúc. Cảm ơn em đã xuất hiện và làm cho cuộc sống của anh trở nên dịu dàng, ngọt ngào hơn mỗi ngày.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg font-medium text-roseRed">
+                    Dù là lúc em cười thật tươi hay những lúc nũng nịu bĩu môi đáng yêu, đối với anh em luôn là cô gái tuyệt vời nhất! ❤️
+                </p>
+
+                <!-- Love Counter Box -->
+                <div class="mt-8 p-6 bg-gradient-to-r from-lovePink to-roseRed rounded-2xl text-white shadow-lg">
+                    <h3 class="font-bold text-sm md:text-base uppercase tracking-wider mb-1 text-pink-100">
+                        💖 Thời Gian Chúng Ta Bên Nhau 💖
+                    </h3>
+                    <p class="text-xs text-pink-200 mb-4">(Từ mốc kỷ niệm: 29/10/2023)</p>
+                    
+                    <div class="grid grid-cols-4 gap-2 md:gap-4 max-w-md mx-auto">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-2.5 md:p-3 text-center border border-white/30">
+                            <span id="days" class="block font-extrabold text-2xl md:text-4xl text-yellow-200">0</span>
+                            <span class="text-[11px] md:text-xs font-semibold text-pink-100">Ngày</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-2.5 md:p-3 text-center border border-white/30">
+                            <span id="hours" class="block font-extrabold text-2xl md:text-4xl text-yellow-200">0</span>
+                            <span class="text-[11px] md:text-xs font-semibold text-pink-100">Giờ</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-2.5 md:p-3 text-center border border-white/30">
+                            <span id="minutes" class="block font-extrabold text-2xl md:text-4xl text-yellow-200">0</span>
+                            <span class="text-[11px] md:text-xs font-semibold text-pink-100">Phút</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-2.5 md:p-3 text-center border border-white/30">
+                            <span id="seconds" class="block font-extrabold text-2xl md:text-4xl text-yellow-200">0</span>
+                            <span class="text-[11px] md:text-xs font-semibold text-pink-100">Giây</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="mb-12">
+            <div class="text-center mb-8">
+                <h3 class="font-cursive text-4xl text-roseRed font-bold mb-1">Khoảnh Khắc Của Huệ Baby 📸</h3>
+                <p class="text-xs md:text-sm text-gray-600">Những bức hình xinh xắn của công chúa nhỏ</p>
+            </div>
+
+            <!-- Polaroid Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                
+                <!-- Polaroid 1 -->
+                <div class="polaroid-card bg-white p-3 rounded-lg polaroid-shadow transform hover:-translate-y-2 hover:scale-105 hover:rotate-0 transition-all duration-300 cursor-pointer -rotate-2" onclick="openModal('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800')">
+                    <div class="h-64 overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-cursive text-center text-xl text-gray-700 mt-3">Công chúa dịu dàng 💕</p>
+                </div>
+
+                <!-- Polaroid 2 -->
+                <div class="polaroid-card bg-white p-3 rounded-lg polaroid-shadow transform hover:-translate-y-2 hover:scale-105 hover:rotate-0 transition-all duration-300 cursor-pointer rotate-2" onclick="openModal('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800')">
+                    <div class="h-64 overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-cursive text-center text-xl text-gray-700 mt-3">Rạng rỡ ngọt ngào ☕</p>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="polaroid-card bg-white p-3 rounded-lg polaroid-shadow transform hover:-translate-y-2 hover:scale-105 hover:rotate-0 transition-all duration-300 cursor-pointer -rotate-3" onclick="openModal('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=800')">
+                    <div class="h-64 overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-cursive text-center text-xl text-gray-700 mt-3">Nụ cười tỏa nắng 🌸</p>
+                </div>
+
+                <!-- Polaroid 4 -->
+                <div class="polaroid-card bg-white p-3 rounded-lg polaroid-shadow transform hover:-translate-y-2 hover:scale-105 hover:rotate-0 transition-all duration-300 cursor-pointer rotate-3" onclick="openModal('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800')">
+                    <div class="h-64 overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-cursive text-center text-xl text-gray-700 mt-3">Xinh đẹp hết nấc 😉</p>
+                </div>
+
+                <!-- Polaroid 5 -->
+                <div class="polaroid-card bg-white p-3 rounded-lg polaroid-shadow transform hover:-translate-y-2 hover:scale-105 hover:rotate-0 transition-all duration-300 cursor-pointer -rotate-1" onclick="openModal('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=800')">
+                    <div class="h-64 overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-cursive text-center text-xl text-gray-700 mt-3">Đáng yêu nũng nịu ✨</p>
+                </div>
+
+                <!-- Polaroid 6 -->
+                <div class="polaroid-card bg-white p-3 rounded-lg polaroid-shadow transform hover:-translate-y-2 hover:scale-105 hover:rotate-0 transition-all duration-300 cursor-pointer rotate-2" onclick="openModal('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800')">
+                    <div class="h-64 overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-cursive text-center text-xl text-gray-700 mt-3">Mãi bên nhau Huệ nhé 🥰</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Love Promises Section -->
+        <section class="mb-12">
+            <div class="text-center mb-8">
+                <h3 class="font-cursive text-4xl text-roseRed font-bold mb-1">Lời Hứa Dành Cho Huệ 💖</h3>
+                <p class="text-xs md:text-sm text-gray-600">Những điều anh luôn khắc ghi trong tim</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-roseRed shadow-md hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-roseRed text-xl font-bold mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-lg mb-2">Luôn Lắng Nghe</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Sẵn sàng ở bên, lắng nghe mọi tâm sự, chuyện vui buồn của Huệ sau mỗi ngày làm việc mệt mỏi.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-roseRed shadow-md hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-roseRed text-xl font-bold mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-lg mb-2">Đưa Huệ Đi Ăn</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Chăm sóc và dẫn công chúa nhỏ đi thưởng thức tất cả các món ăn ngon mà Huệ yêu thích.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-roseRed shadow-md hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-roseRed text-xl font-bold mb-4">
+                        <i class="fas fa-face-smile-beam"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-lg mb-2">Chiều Chuộng Huệ</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Luôn nhường nhịn, yêu thương và dành những điều trọn vẹn ngọt ngào nhất cho em.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Interactive Kiss Button -->
+        <div class="text-center my-10">
+            <button id="kissBtn" class="px-8 py-4 bg-gradient-to-r from-roseRed via-pink-500 to-roseRed text-white font-bold text-lg rounded-full shadow-xl hover:shadow-pink-500/50 hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
+                <i class="fas fa-kiss-wink-heart text-amber-200 text-2xl"></i>
+                Bấm Để Nhận Nụ Hôn Ngọt Ngào 💋
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 text-xs md:text-sm pt-8 border-t border-white/40">
+            Crafted with ❤️ for <span class="font-bold text-roseRed">Trần Thị Huệ</span> • Happy Vietnamese Women's Day 20/10
+        </footer>
+
+    </main>
+
+    <!-- Modal Image Preview Lightbox -->
+    <div id="imgModal" class="fixed inset-0 z-50 bg-black/85 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeModal()">
+        <div class="relative max-w-3xl max-h-[85vh] p-2 bg-white rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-3 right-3 z-10 w-8 h-8 bg-gray-900/60 text-white rounded-full flex items-center justify-center hover:bg-gray-900 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImg" src="" class="max-h-[80vh] w-auto object-contain rounded-xl">
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Start date of love: October 29, 2023
+        const loveStartDate = new Date('2023-10-29T00:00:00');
+
+        function updateLoveTimer() {
+            const now = new Date();
+            const diff = now - loveStartDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateLoveTimer, 1000);
+        updateLoveTimer();
+
+        // Audio controls logic
+        const bgMusic = document.getElementById('bgMusic');
+        const musicDisc = document.getElementById('musicDisc');
+        let isMusicPlaying = false;
+
+        function playAudio() {
+            bgMusic.play().then(() => {
+                isMusicPlaying = true;
+                musicDisc.classList.remove('disc-paused');
+            }).catch(e => {
+                console.log("Autoplay restricted by browser settings:", e);
+            });
+        }
+
+        function toggleAudio() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicDisc.classList.add('disc-paused');
+                isMusicPlaying = false;
+            } else {
+                bgMusic.play().then(() => {
+                    musicDisc.classList.remove('disc-paused');
+                    isMusicPlaying = true;
+                });
+            }
+        }
+
+        // Open Gift Logic
+        function openGift() {
+            const overlay = document.getElementById('giftOverlay');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 700);
+
+            playAudio();
+            explodeHearts(window.innerWidth / 2, window.innerHeight / 2, 50);
+        }
+
+        document.getElementById('giftBox').addEventListener('click', openGift);
+        document.getElementById('openBtn').addEventListener('click', openGift);
+        document.getElementById('musicBtn').addEventListener('click', toggleAudio);
+        document.getElementById('kissBtn').addEventListener('click', (e) => {
+            const rect = e.target.getBoundingClientRect();
+            explodeHearts(rect.left + rect.width / 2, rect.top + rect.height / 2, 40);
+        });
+
+        // Modal Lightbox
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            const modal = document.getElementById('imgModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imgModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Animated Canvas Heart Particles
+        const canvas = document.getElementById('heartCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class HeartParticle {
+            constructor(x, y, isExplosion = false) {
+                this.x = x || Math.random() * canvas.width;
+                this.y = y || canvas.height + 20;
+                this.size = Math.random() * 12 + 8;
+                
+                if (isExplosion) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.random() * 6 + 2;
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                } else {
+                    this.vx = (Math.random() - 0.5) * 1.5;
+                    this.vy = -(Math.random() * 2 + 1);
+                }
+                
+                this.color = `hsl(${Math.random() * 40 + 330}, 100%, 65%)`;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.008 + 0.004;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.bezierCurveTo(this.x - this.size / 2, this.y - this.size / 2, this.x - this.size, this.y + this.size / 3, this.x, this.y + this.size);
+                ctx.bezierCurveTo(this.x + this.size, this.y + this.size / 3, this.x + this.size / 2, this.y - this.size / 2, this.x, this.y);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= this.decay;
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (Math.random() < 0.15) {
+                particles.push(new HeartParticle());
+            }
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+
+                if (particles[i].alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        function explodeHearts(x, y, count = 30) {
+            for (let i = 0; i < count; i++) {
+                particles.push(new HeartParticle(x, y, true));
+            }
+        }
+    </script>
+</body>
+</html>
